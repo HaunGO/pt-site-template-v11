@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+.mountains{
+  display:block;
+  position:absolute;
+  top:0; left:0; bottom:0; right:0;
+
+  width:100%;
+  height:100%;
+
+  z-index:50;
+
+  // border:1px solid gold;
+
+  overflow:hidden;
+
+  // bottom:-50px;
+
+  &.interior{
+    .mountain{
+      &.m1{
+        background-image:url($img-url + 'mountains-tile-m1.svg');
+        height:100px;
+      }
+
+      &.m2{
+        background-image:url($img-url + 'mountains-tile-m2.svg');
+        height:125px;
+      }
+
+      &.m3{
+        background-image:url($img-url + 'mountains-tile-m3.svg');
+        height:150px;
+      }
+    }
+  }
+}
+
+
+
+
+
+.mountain{
+  display:block;
+  position:absolute;
+  bottom:-10px;
+  left:0;
+  right:0;
+  width:100%;
+  height:100px;
+  // border:1px dotted green;
+  // background-color:white;
+
+
+
+  // background-size:100%;
+  background-position:center bottom;
+
+  background-repeat:repeat-x;
+  // background-repeat:no-repeat;
+
+
+
+  &.m1{
+    background-image:url($img-url + 'mountains-tile-m1.svg');
+    // background-position:center bottom;
+    // background-size:105%;
+    // background-size:100% 100px;
+    height:100px;
+  }
+
+  &.m2{
+    background-image:url($img-url + 'mountains-tile-m2.svg');
+    // opacity:0.5;
+    // background-size:100% 200px;
+    height:150px;
+    // bottom:20px;
+  }
+
+  &.m3{
+    background-image:url($img-url + 'mountains-tile-m3.svg');
+    // opacity:0.2;
+    // background-size:100% 400px;
+    height:200px;
+    // bottom:50px;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,385 @@
+
+// Fonts
+$sidr-font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+$sidr-font-size: 15px;
+
+
+// Colors
+$sidr-background: $bci-orange;
+$sidr-background-shadow-color: #222;
+$sidr-text-color: #fff;
+$sidr-box-shadow-color: #000;
+$sidr-input-background-color: #000;
+
+
+// Width
+$sidebar-width: 300px;
+// $sidebar-width-neg: -300px;
+$sidebar-width-neg: -$sidebar-width;
+
+// $sidebar-width: 25%;
+// $sidebar-width-neg: -25%;
+
+
+
+@import 'sidr_base';
+
+
+
+
+
+.caret{
+	border-top-color:$sidr-text-color;
+}
+
+
+
+
+$topbar-height: 80px;
+
+
+.header{
+	// margin-top: $topbar-height;
+}
+
+@media screen and ( min-height: 600px ){
+	
+	#site-topbar{
+		position:fixed;
+	}
+	.header{
+		// margin-top: $topbar-height;
+	}
+}
+
+
+
+
+#site-topbar{
+
+	.js & {
+		height:$topbar-height;
+		display:flex;
+		justify-content:flex-end;
+		align-content:center;
+		align-items:center;
+
+		// @include ptBreakpoint($sm){
+		// 	justify-content:flex-end;
+		// }
+
+	}
+
+	background-color:$bci-orange;
+	// height:100px;
+	width:auto;
+
+	width:100%;
+	z-index:1001;
+
+
+
+	.logoholder{
+		width:200px;
+		height:auto;
+		margin-right:2em;
+
+		// position:absolute;
+		// right:0;
+		// top:50%;
+		// transform:translateY(-50%);
+		// display:none;
+
+		.sidr-closed & {
+			display:block;
+		}
+
+		.sidr-open & {
+			display:none;
+		}
+		
+		@include ptBreakpoint($sm){
+		// 	display:block;
+			margin-right:5em;
+		
+			.sidr-closed &,
+			.sidr-open & {
+				display:block;
+			}
+
+		}
+		
+		
+
+
+	}
+
+
+	
+
+
+
+
+	nav{
+		ul{
+			li{
+				// display:inline-block;
+				// border:1px solid red;
+			}
+		}
+	}
+
+
+
+}
+
+
+
+
+
+// THESE ARE AUTOMATIC FROM THE SIDR PLUGGIN:
+body{
+  &.sidr-closed{
+  }
+  &.sidr-open{
+  }
+}
+
+
+// // I CREATED THESE CLASSES MYSELF:
+// html{
+//   &.sidr-is-open{
+//     // overflow:hidden;
+//   }
+//   &.sidr-is-closed{
+//     // overflow:scroll;
+//   }
+// }
+
+
+  
+#sidr-menu-btn{
+
+display:none;
+
+	.js & {
+		display:flex;
+	  	justify-content:flex-end;
+	  	align-content:center;
+	  	align-items:center;
+	}
+
+  position:fixed;
+  left:0; top:0;
+  // background-color: rgba(0,0,0,0.2);
+	background-color:darken($bci-orange, 10%);
+
+  height:$topbar-height;
+  padding:1em;
+  font-size:2em;
+
+	z-index:1002;
+
+  color:white;
+
+  transition:0.1s;
+
+  &:hover, &:focus{
+    // color:black;
+    text-decoration: none;
+	background-color:darken($bci-orange, 30%);
+  }
+
+  @include ptBreakpoint($lg){
+    display:none;
+  }
+  
+}
+
+
+
+#sidr-close-btn{
+	position:relative;
+	// right:-$topbar-height; 
+	// right:0; 
+	// top:0;
+
+float:right;
+	
+	padding:0.5em 0.5em 0.5em 0.5em;
+	background-color:darken($bci-orange, 10%);
+  
+	// height:$topbar-height;
+	// width:$topbar-height;
+	font-size:1.5em;
+	// border-radius:50%;
+	// width: 2rem;
+	// height: 2rem;
+
+	// display:flex;
+	// justify-content:center;
+	// align-content:center;
+	// align-items:center;
+	
+	z-index:99;
+
+	color:white;
+
+	transition:0.1s;
+
+	&:hover, &:focus{
+		text-decoration: none;
+		background-color:darken($bci-orange, 30%);
+	}
+
+	// 
+	@include ptBreakpoint($sm){
+		font-size:1em;
+	}
+	@include ptBreakpoint($lg){
+		display:none !important;
+	}
+
+}
+
+
+
+
+
+#sidr-main{
+	// position:fixed;
+	// overflow-x:visible;
+	// overflow-y:scroll;
+	background-color:$bci-orange;
+	padding-bottom:1em;
+	
+	a{
+		color:white;
+		&:hover, &:focus{
+			color:$bci-blue;
+		}
+	}
+	
+
+
+	.js & {
+		a{
+			color:white;
+			&:hover, &:focus{
+				color:white;
+			}
+		}
+	}
+ 
+
+	.logoholder{
+
+		position: relative;
+		margin:auto;
+		width:100%;
+		max-width:300px;
+		padding:1em;
+
+		img{
+			width:100%;
+			height:auto;
+		}
+		@include ptBreakpoint($sm){
+			display:none;
+		}
+	}
+
+
+}
+
+
+
+
+
+.contact-links{
+  
+	padding:0.5em 0;
+
+	min-height:$topbar-height;
+
+	// background-color:darken($bci-orange, 5%);
+
+	@include ptBreakpoint($md){
+		// margin-top:1em;
+	}
+
+	display:flex;
+	flex-direction:row;
+	justify-content:center; 
+
+	a{
+		padding:0.5em 1em;
+		margin:1em auto;
+		color:white;
+		// border-radius:2em;
+
+		&:hover, &:focus{
+	  		background-color:darken($bci-orange, 10%);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+// THIS IS CREATED AND ADDED AT RUN TIME VIA JS:
+.sidr-cover{
+  // display:none; 
+  position:fixed; top:0; left:0; bottom:0; right:0;
+  background-color:rgba(0,0,0,0.8);
+  z-index:1000;
+  width:100%;
+  height:100%;
+  // opacity:0;
+
+	// cursor: w-resize;
+	// cursor: url($img-url + 'logo-bci-white.png'), auto;  
+	cursor: url($img-url + 'close-lg.cur'), auto;  
+
+  @include ptBreakpoint($lg){
+    display:none !important;
+  }
+
+
+
+}
+
+
+ 
+
+.scrollzone{
+	position: absolute;
+	top:0; right:0; 
+	width:4em; 
+	// height:100%;
+	background-color:rgba(0,0,0,0.1);
+	z-index:98;
+
+	display:flex;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

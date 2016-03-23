@@ -1,0 +1,445 @@
+
+
+
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+ 
+// BASIC FUCK-OFF BOOTSTRAP STYLES:
+.container{
+  width:100%;
+  // max-width:1500px;
+  margin:auto;
+  padding:0;
+  .row{
+    padding:0em;
+    margin:0em;
+  }
+}
+
+.pt-sizer{
+  z-index:9999999999999;
+}
+
+.viewport{
+  position:relative;
+  background-color:#e8e8e8;
+}
+   
+
+.pt-container{
+  width:100%;
+  max-width:initial;
+  position: relative;
+  margin-left:auto;
+  margin-right:auto;
+  padding:0;
+
+}
+
+
+
+
+
+
+
+
+
+// $this-blue: #3c444b;
+
+// .bg-black{
+//   @include ptZoneColors(#000000, #ffffff, #ffffff );
+// }
+// .bg-white{
+//   @include ptZoneColors(#fff, $this-blue, $this-blue );
+// }
+// .bg-grey{
+//   @include ptZoneColors($apg-offwhite, $apg-text-dark-1, $apg-text-dark-2 );
+// }
+// .bg-red{
+//   @include ptZoneColors( $apg-red, #ffffff, #e1e1e1 );
+// }
+
+// .bg-blue{
+//   @include ptZoneColors(
+//                           darken($this-blue, 10), 
+//                           lighten($this-blue, 50), 
+//                           lighten($this-blue, 50) 
+//                         );
+// }
+
+
+
+.bg-green{
+  @include ptZoneColors( $bci-green, #ffffff, #000 );
+}
+
+.bg-blue{
+  @include ptZoneColors( $bci-blue, #ffffff, #000 );
+}
+
+.bg-orange{
+  @include ptZoneColors( $bci-orange, #ffffff, #000 );
+}
+
+.bg-grey{
+  @include ptZoneColors( $bci-grey, #ffffff, #000 );
+}
+
+
+
+
+
+
+
+ 
+.bg-draft{
+  background-image:url($img-url+'header-bg-draft-sm.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'header-bg-draft-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'header-bg-draft-lg.jpg');
+  }
+}
+
+
+.bg-knoxville{
+  background-image:url($img-url+'knoxville-md.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'knoxville-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    background-position:50% 20%;
+    background-image:url($img-url+'knoxville-lg.jpg');
+  }
+}
+
+
+
+.bg-building{
+  background-image:url($img-url+'building-render-sm.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'building-render-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'building-render-lg.jpg');
+  }
+}
+
+
+.bg-barrels{
+  background-image:url($img-url+'barrels-sm.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'barrels-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'barrels-lg.jpg');
+  }
+}
+
+
+
+
+
+.bg-suds{
+
+  background-image:url($img-url+'bg-suds-md.png');
+  background-position:center;
+  background-size:contain;
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'bg-suds-lg.png');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// body{
+//   border:10px solid purple;
+  
+//   .cssvhunit &{
+//     border:10px solid pink;
+//   }
+// }
+
+
+
+
+
+#section-intro{
+  
+  @include ptPadding(2em 1em, 4em 2em);
+
+
+  font-size:1.2em;
+  line-height:2em; 
+  text-align:left;
+
+
+
+  @include ptBreakpoint($sm){
+    font-size:1.5em;
+    line-height:2em; 
+  }
+
+
+  @include ptBreakpoint($md){
+    // padding:3em 2em;
+    text-align:center;
+    font-size:em;
+    line-height:1.8em;
+  
+    .cssvhunit &{
+      min-height:80vh;
+      @include ptPos(5);
+    }
+
+    p{
+      text-align:center;
+    }
+  }
+  
+  p{
+
+    text-transform: uppercase;
+    // text-align:center;
+
+    max-width:1000px;
+    margin:auto;
+  }
+
+  background-image:url($img-url+'building-render-sm.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+  // background-size:contain;
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'building-render-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'building-render-lg.jpg');
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#section-truck{
+  
+
+  background-image:url($img-url+'truck-lg.jpg');
+  background-position:100% 50%;
+  background-size:cover;
+  
+  @include ptBreakpoint($sm){
+    background-position:50% 50%;
+    background-size:cover;
+  }
+  
+  .cssvhunit &{
+    // min-height:50vh;
+  }
+  
+  padding:5em 0;
+  color:white;
+  text-align:center;
+  
+  .ab-a{
+    min-height:initial;
+  }
+
+  .ab-b{
+    padding:2em;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#section-brands{
+  @include ptPadding(1em 2em);
+  background-color:white;
+}
+
+
+#slick-brands{
+  
+  margin:3em 0 0 0;
+  padding:0;
+  // display:flex;
+  // justify-content: stretch;
+  // align-items:center;
+  // align-content:center;
+
+
+  .slick-track{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    align-content:center;
+  }
+
+
+  .slick-slide{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    align-content:center;
+    // img{
+    //   // margin:auto;
+    // }
+  }
+
+
+
+  .slick-prev, 
+  .slick-next{
+    // background-color:grey;
+    // color:red;
+    height:50px;
+    // width:50px;
+    // border:1px solid red;
+    z-index:50;
+    // font-size:2em;
+    
+    &:before{
+      color:$bci-grey;
+      font-size:50px;
+    }
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+#testyspy{
+  position:fixed;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  // border:1px solid red;
+  z-index: 99999;
+  background-color:white;
+  .active{
+      background-color:gold;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

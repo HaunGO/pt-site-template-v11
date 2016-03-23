@@ -1,0 +1,405 @@
+
+
+
+
+
+
+
+
+
+/* 
+    <header class="header-home">
+
+      <div class="logo-holder">
+        <img src="assets/img/logo-brookings-white-lg.png" alt="Brookings Anglers logo">
+      </div>
+      
+      <div class="headline">
+        <h2>Header for Tease</h2>
+        <h4>Sub Headline for Zing</h4>
+      </div>
+
+    </header>
+
+
+    <header class="header-interior">
+      
+      <div class="headline">
+        <h1>Interior Headline</h1>
+      </div>
+
+    </header>
+
+
+ */
+
+
+
+
+.header{
+
+  position:relative;
+
+  padding:5em 0 3em 0;
+
+  min-height:400px;
+
+  @include ptBreakpoint($sm){
+    padding:10em 0 15em 0;
+  
+    .cssvhunit &{
+      min-height:80vh;
+      padding:2em;
+    }  
+  
+    .no-touchevents &{
+      // background-attachment:fixed;
+    }
+
+  }
+
+}
+ 
+
+
+
+
+.headline{
+  position:absolute; bottom:5em;
+  left:50%;
+  transform:translateX(-50%);
+
+
+  // background-color:darken($bci-orange, 10%);
+  background-color:darken($bci-grey, 10%);
+
+  
+
+  color:#fff;
+  text-transform:capitalize;    
+  text-align:center;
+  
+  h1{
+    font-size:2em;
+    margin:0.5em; padding:0;
+  }  
+  @include ptBreakpoint($sm){
+    h1{
+      font-size:2.5em;
+    }  
+  } 
+
+  width:90%;
+  max-width:700px;
+  border-radius:5px;
+
+  padding:2em;
+  margin:auto;
+
+
+
+
+  &:before{
+    content:' ';
+    position:absolute; top:1em; left:1em; right:1em;
+    margin:1em;
+    // width:100%;
+    border-bottom:2px solid #fff;
+  }
+  &:after{
+    content:' ';
+    position:absolute; bottom:1em; left:1em; right:1em;
+    margin:1em;
+    // width:100%;
+    border-bottom:2px solid #fff;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.header-home{
+
+  @extend .header;
+
+  z-index:50;
+
+  background-image:url($img-url+'bg-river-sm.jpg');
+  background-position:top center;
+  background-size:cover;
+
+  padding:5em 0 3em 0;
+
+
+  @include ptBreakpoint($sm){
+    background-image:url($img-url+'bg-river-md.jpg');
+    padding:10em 0 15em 0;
+  
+    .cssvhunit &{
+      min-height:85vh;
+      padding:2em;
+    }  
+  
+    .no-touchevents &{
+      background-attachment:fixed;
+    }
+
+  }
+
+
+  @include ptBreakpoint($md){
+    background-image:url($img-url+'bg-river-lg.jpg');
+  }
+
+
+  // @include ptPos(5);
+
+
+
+}
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.header-interior{
+  @extend .header;
+  position:relative;
+  
+  z-index:50;
+
+  min-height:500px;
+
+  .cssvhunit &{
+    min-height:40vh;
+  }  
+
+  background-image:url($img-url+'bg-fern-sm.jpg');
+  background-position:center center;
+  background-size:cover;
+  // background-size:auto 300px;
+
+
+  @include ptBreakpoint($sm){
+    // background-size:cover;
+    background-image:url($img-url+'bg-fern-md.jpg');
+  }
+
+  @include ptBreakpoint($md){
+    // background-size:cover;
+    background-image:url($img-url+'bg-fern-lg.jpg');
+
+  }
+
+
+  .headline{ 
+
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
+  }
+
+
+
+  .cssvhunit &{
+    // min-height:30vh;
+  }
+
+  .no-touchevents &{
+    @include ptBreakpoint($sm){
+      background-attachment:fixed;
+      background-size:cover;
+    }
+    // background-position:center top;
+    // background-size:contain;
+  }
+
+  padding:0 0 4em 0;
+
+  @include ptPos(8);
+
+
+
+// TINT:
+  &:before{
+    content:' ';
+    position:absolute;
+    top:0; left:0; bottom:0; right:0;
+    width:100%; height:100%;
+    background-color:black;
+    opacity:0.7;
+    z-index:-1;
+
+  }
+
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+.header-home{
+
+  &.bg1{
+    background-image:url('http://placehold.it/400x300/?text=IMAGE 1 xs');
+    background-position:center;
+    background-size:cover;
+    
+    @include ptBreakpoint($sm){
+      background-image:url('http://placehold.it/800x600/?text=IMAGE 1 sm');
+    }
+   
+    @include ptBreakpoint($md){
+      background-image:url('http://placehold.it/1200x1000/?text=IMAGE 1 md');
+    }
+   
+    @include ptBreakpoint($lg){
+      background-image:url('http://placehold.it/1800x1400/?text=IMAGE 1 lg');
+    }
+  }
+
+  &.bg2{
+    background-image:url('http://placehold.it/400x300/?text=IMAGE 2 xs');
+    background-position:center;
+    background-size:cover;
+    
+    @include ptBreakpoint($sm){
+      background-image:url('http://placehold.it/800x600/?text=IMAGE 2 sm');
+    }
+   
+    @include ptBreakpoint($md){
+      background-image:url('http://placehold.it/1200x1000/?text=IMAGE 2 md');
+    }
+   
+    @include ptBreakpoint($lg){
+      background-image:url('http://placehold.it/1800x1400/?text=IMAGE 2 lg');
+    }
+  }
+
+  &.bg3{
+    background-image:url('http://placehold.it/400x300/?text=IMAGE 3 xs');
+    background-position:center;
+    background-size:cover;
+    
+    @include ptBreakpoint($sm){
+      background-image:url('http://placehold.it/800x600/?text=IMAGE 3 sm');
+    }
+   
+    @include ptBreakpoint($md){
+      background-image:url('http://placehold.it/1200x1000/?text=IMAGE 3 md');
+    }
+   
+    @include ptBreakpoint($lg){
+      background-image:url('http://placehold.it/1800x1400/?text=IMAGE 3 lg');
+    }
+  }
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
