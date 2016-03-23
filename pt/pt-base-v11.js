@@ -105,7 +105,7 @@ var PT = {
         PT.buildTransitions(true);
 
 
-        PT.monitorFPS();
+        // PT.monitorFPS();
 
         PT.buildNavSpy();
 

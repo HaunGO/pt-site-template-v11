@@ -3683,9 +3683,9 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/pt\/pt-base-v11.js",
-		"outputAbbreviatedPath": "\/_deploy\/assets\/pt-base-v9.min.js",
+		"outputAbbreviatedPath": "\/_deploy\/assets\/pt-base-v11.min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
