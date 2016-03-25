@@ -105,9 +105,15 @@ var PT = {
         PT.buildTransitions(true);
 
 
-        PT.monitorFPS();
+        // PT.monitorFPS();
 
         PT.buildNavSpy();
+
+
+        // PT.buildSIDR();
+
+
+
 
     }
 
@@ -153,6 +159,16 @@ var PT = {
 
 
 
+
+
+
+
+
+
+
+
+
+
     ,checkPreloader:function(){
         //console.log('PT.checkPreloader()');
         
@@ -182,6 +198,14 @@ var PT = {
 
     } 
  
+
+
+
+
+
+
+
+
 
 
 
@@ -256,12 +280,19 @@ var PT = {
 
 
 
+
+
+
+
+
     ,addRandomClass: function(_obj, _arr) {
         console.log('addRandomClass()');
         var arr = _arr;
         var obj = $(_obj);
         obj.addClass( arr[ Math.floor(Math.random() * arr.length)  ]  );
     }
+
+
 
 
 
@@ -294,6 +325,8 @@ var PT = {
 
 
 
+
+
     ,runStickies:function(){
 
         $('[data-pt-sticky]').each(function(i, val){
@@ -301,6 +334,8 @@ var PT = {
         });
 
     }
+
+
 
 
 
@@ -328,6 +363,8 @@ var PT = {
 
 
 
+
+
     // RUNS PT.imgSwap ON A PRESET BUNCH OF CLASSSES;
     ,runImgSwaps: function() {
         // //console.log('PT.runImgSwaps()')
@@ -341,6 +378,167 @@ var PT = {
         });
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // COPIES IMG SRC INTO CSS BACKGROUND-IMAGE.
+    ,imgSwapUploadCareResponsive: function(_img, _div) {
+        
+        // PT.log('PT.imgSwapResponsive()');
+        // PT.log(PT._Size);
+        
+
+        var IMG = _img;
+        var DIV = _div;
+        // var IMGurl = IMG.attr('srcset');
+        var IMGurl = IMG.attr('src');
+
+        // IMG.css('visibility', 'hidden');
+        IMG.css('display', 'none');
+
+
+        if(PT._Size === 'xs'){
+            if(DIV.data('pt-imgswap-ucr').xs !== undefined){
+                IMGurl += (DIV.data('pt-imgswap-ucr').xs);                
+            }else{
+                IMGurl += ("-/resize/400x/-/effect/grayscale/");
+            }
+        }
+        if(PT._Size === 'sm'){
+            if(DIV.data('pt-imgswap-ucr').sm !== undefined){
+                IMGurl += (DIV.data('pt-imgswap-ucr').sm);                
+            }else{
+                IMGurl += ("-/resize/800x/-/effect/grayscale/");
+            }
+        }
+        if(PT._Size === 'md'){
+            if(DIV.data('pt-imgswap-ucr').md !== undefined){
+                IMGurl += (DIV.data('pt-imgswap-ucr').md);                
+            }else{
+                IMGurl += ("-/resize/1000x/-/effect/grayscale/");
+            }
+        }
+        if(PT._Size === 'lg'){
+            if(DIV.data('pt-imgswap-ucr').lg !== undefined){
+                IMGurl += (DIV.data('pt-imgswap-ucr').lg);                
+            }else{
+                IMGurl += ("-/resize/1400x/-/effect/grayscale/");
+            }
+        }
+        if(PT._Size === 'xl'){
+            if(DIV.data('pt-imgswap-ucr').xl !== undefined){
+                IMGurl += (DIV.data('pt-imgswap-ucr').xl);                
+            }else{
+                IMGurl += ("-/resize/1800x/-/effect/grayscale/");
+            }
+        }
+
+        if(DIV.data('pt-imgswap-ucr') === '' || DIV.data('pt-imgswap-ucr') === ' ' || DIV.data('pt-imgswap-ucr') === 'default' || DIV.data('pt-imgswap-ucr') === undefined){
+            // PT.log('?~? zilcho');
+        }else{
+            // PT.log('?~? ' + DIV.data('pt-imgswap-ucr'));        
+        }
+
+
+        // PT.log('???? ' + $(DIV.data('pt-imgswap-ucr')).length);     
+
+        // PT.log(IMGurl);
+
+        DIV.css('background-image', 'url("'+IMGurl+'")' )
+            .css('background-size', 'cover')
+            .css('background-position','center');
+    }
+
+
+
+
+
+
+    // RUNS PT.imgSwap ON A PRESET BUNCH OF CLASSSES;
+    ,runImgSwapUploadCareResponsive: function() {
+        // PT.log('PT.runImgSwapUploadCareResponsive()');
+
+        $('[data-pt-imgswap-ucr]').each(function(i, val){
+
+            // check the data attribute value and pass it along to the imgSwap function.
+            // var _bgStyle = ;// 'cover' / 'contain' / 
+
+            PT.imgSwapUploadCareResponsive( $(val).find('img:first'), $(val) );
+
+
+
+            // console.log($(val).data('pt-imgswap-ucr').xs);
+
+        });
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -690,27 +888,36 @@ var PT = {
 /*
 
 
-    #TestSpy{
-      position:fixed;
-      right:0;
-      top:20%;
-      // border:1px solid red;
-      z-index: 99999;
-      background-color:white;
-      .active{
-          background-color:gold;
-      }
+    li{
+        &.active{
+            a{
+                color:white;
+                background-color:$pt-color-primary;
+                &:hover, &:focus, &:active, &:focus:hover{
+                    // color:$pt-color-primary;
+                    background-color:lighten($pt-color-primary, 5%);
+                }   
+            }
+        }
+        a{
+            color:$pt-color-primary;
+            &:hover, &:focus, &:active, &:focus:hover{
+                color:white;
+                background-color:$pt-color-primary;
+            }   
+        }
     }
 
 
-      <ul class="TestSpy" data-pt-spy> 
-          <li><a data-pt-spy-to="#company"        href="#company">Company</a></li>
-          <li><a data-pt-spy-to="#acquisitions"   href="#acquisitions">Acquisitions</a></li>
-          <li><a data-pt-spy-to="#development"    href="#development">Development</a></li>
-          <li><a data-pt-spy-to="#management"     href="#management">Management</a></li>
-          <li><a data-pt-spy-to="#brokerage"      href="#brokerage">Brokerage</a></li>
-          <li><a                href="properties.html">Properties</a></li>
-      </ul>
+    <div class="testyspy">
+        <ul class="nav" data-pt-spy > 
+            <li><a data-pt-spy-to="#section-intro"   href="#section-intro">intro</a></li>
+            <li><a data-pt-spy-to="#section-truck"   href="#section-truck">truck</a></li>
+            <li><a data-pt-spy-to="#section-brands"  href="#section-brands">brands</a></li>
+            <li><a                                   href="other-page/">no spy</a></li>
+        </ul>
+    </div>
+
 
 */
 
@@ -748,11 +955,11 @@ var PT = {
                         var sm_scene = new ScrollMagic.Scene()
                                         .triggerElement(SpyZoneID)
                                         .setClassToggle(SpyNavItem, "active") // add class toggle
-                                        .triggerHook(0.5)
+                                        .triggerHook(0.2)
                                         // .trigger('hello')
                                         // DURATION IS THE HEIGHT OF THE ANCHORED ZONE
                                         .duration($(SpyZoneID).outerHeight())  
-                                        // .addIndicators({name:"pt-spy-to " +SpyZoneID, indent:100}) // add indicators (requires plugin)
+            // .addIndicators({name:"pt-spy-to " +SpyZoneID, indent:100}) // add indicators (requires plugin)
                                         .addTo(PT.SM_CTRL);
 
 
@@ -811,6 +1018,164 @@ var PT = {
 
 
 
+ 
+
+
+
+
+/*
+
+    <a id="sidr-menu-btn" href="#sidr-main"><i class="fa fa-bars"></i></a>
+
+    <div id="site-topbar">
+
+        <div class="logoholder"><img class="img-responsive" src="assets/img/logo-bci-white.png" alt=""></div>
+
+    </div>
+
+
+    <div id="sidr-main">
+        <a id="sidr-close-btn" href="#"><i class="fa fa-chevron-left"></i></a>
+
+        <nav>
+            <ul>
+                <li><a href="#">Sample link 1</a></li>
+                <li>
+                    <a href="#">Sample link 2</a>
+                    <ul>
+                        <li><a href="#">Child link 1</a></li>
+                        <li><a href="#">Child link 2</a></li>
+                        <li><a href="#">Child link 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sample link 3</a></li>
+                <li><a href="#">Sample link 4</a></li>
+                <li><a href="#">Sample link 5</a></li>
+                <li><a href="#">Sample link 6</a></li>
+            </ul>
+        </nav>
+
+
+    
+        <div class="main">
+            <p>Content.</p>
+        </div>
+        
+
+    </div>
+
+*/
+
+
+
+
+    ,buildSIDR: function(){
+        console.log('buildSIDR()');
+
+        // if( $('#sidr-main').length ){
+        //     doNow();
+        // }else{
+        //     console.log('there is no SIDR to build.');
+        // }
+
+        // function doNow(){
+            // console.log('doing now');
+
+            // ADD A COVER TO THE PAGE TO SHOW WHEN THE MENU IS OPEN:
+            $('body').prepend('<div class="sidr-cover"></div>');
+
+            var _sidrCover = $('.sidr-cover');
+
+
+            // SET THE COVER TINT TO INVISIBLE:
+            TweenMax.set(_sidrCover, {autoAlpha:0});
+
+
+
+            // ON CLICK, CLOSE THE SIDR MENU:
+            _sidrCover.on('click', function(e){
+                $.sidr('close', 'sidr-main');
+            });
+            
+            $('#sidr-close-btn').on('click', function(e){
+                $.sidr('close', 'sidr-main');
+            });
+              
+
+
+
+            // TURNS THE NESTED <ul>'s INTO ACCORDION NAV:
+            $('#sidr-main nav ul').navgoco();
+     
+
+
+
+            // THE ACTUAL SIDR MENU CODE:
+            $('#sidr-menu-btn').sidr({
+
+              speed: 200
+              ,displace:false
+              ,name:'sidr-main'
+              // ,side:'left'
+              // ,body:'.viewport'
+
+              ,onOpen: function () {
+                console.log('onOpen');
+                TweenMax.to(_sidrCover, 0.3, {autoAlpha:1});
+                
+                // $('html').removeClass('sidr-is-closed');
+                // $('html').addClass('sidr-is-open');
+              }
+
+              ,onClose: function () {
+                console.log('onClose');
+                TweenMax.to(_sidrCover, 0.3, {autoAlpha:0});
+              
+                // $('html').removeClass('sidr-is-open');
+                // $('html').addClass('sidr-is-closed');
+              }
+
+              // ,onOpenEnd: function () {
+              //   console.log('onOpenEnd');
+              // }
+
+              // ,onCloseEnd: function () {
+              //   console.log('onCloseEnd');
+              // }
+
+            });
+
+        // }
+
+
+
+
+
+        function resizer() {
+            console.log('resizer()');
+
+            TweenMax.to(['.viewport', '#site-topbar'], 0.3, { left:$('#sidr-main').width() , width:$(window).width() - $('#sidr-main').width() });
+            
+        }
+
+
+
+        function startResize() {
+            console.log('startResize()');
+            $(window).resize(resizer);
+           
+            TweenMax.to(['.viewport', '#site-topbar'], 0.3, { left:$('#sidr-main').width() , width:$(window).width() - $('#sidr-main').width() });
+        
+        }
+
+
+
+        function endResize() {
+            console.log('endResize()');
+            $(window).off("resize", resizer);
+            TweenMax.to(['.viewport','#site-topbar'], 0.3, { left:0, width:'100%' });
+
+        }
 
 
 
@@ -818,8 +1183,27 @@ var PT = {
 
 
 
+        PT._SSM.addStates([
+            {
+                id: 'sidr-show',
+                query: '(min-width: 1200px)',
+                onEnter: function(){  
+                    startResize();
+                    $.sidr('open', 'sidr-main');
+                },
+                onLeave: function(){
+                    endResize();
+                    $.sidr('close', 'sidr-main');
+                }
+            }
+        ]);
 
 
+
+
+
+ 
+    }
 
 
 

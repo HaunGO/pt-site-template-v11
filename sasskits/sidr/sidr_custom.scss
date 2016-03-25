@@ -1,11 +1,12 @@
 
 // Fonts
-$sidr-font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+// $sidr-font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
 $sidr-font-size: 15px;
 
 
 // Colors
-$sidr-background: $bci-orange;
+// $sidr-background: $bci-orange;
+$sidr-background: $pt-sidr-background;
 $sidr-background-shadow-color: #222;
 $sidr-text-color: #fff;
 $sidr-box-shadow-color: #000;
@@ -25,7 +26,7 @@ $sidebar-width-neg: -$sidebar-width;
 @import 'sidr_base';
 
 
-
+ 
 
 
 .caret{
@@ -35,7 +36,8 @@ $sidebar-width-neg: -$sidebar-width;
 
 
 
-$topbar-height: 80px;
+
+$topbar-height: 100px;
 
 
 .header{
@@ -70,7 +72,7 @@ $topbar-height: 80px;
 
 	}
 
-	background-color:$bci-orange;
+	background-color:$sidr-background;
 	// height:100px;
 	width:auto;
 
@@ -172,7 +174,7 @@ display:none;
   position:fixed;
   left:0; top:0;
   // background-color: rgba(0,0,0,0.2);
-	background-color:darken($bci-orange, 10%);
+	background-color:darken($sidr-background, 10%);
 
   height:$topbar-height;
   padding:1em;
@@ -187,7 +189,7 @@ display:none;
   &:hover, &:focus{
     // color:black;
     text-decoration: none;
-	background-color:darken($bci-orange, 30%);
+	background-color:darken($sidr-background, 30%);
   }
 
   @include ptBreakpoint($lg){
@@ -204,10 +206,10 @@ display:none;
 	// right:0; 
 	// top:0;
 
-float:right;
+	float:right;
 	
 	padding:0.5em 0.5em 0.5em 0.5em;
-	background-color:darken($bci-orange, 10%);
+	background-color:darken($sidr-background, 10%);
   
 	// height:$topbar-height;
 	// width:$topbar-height;
@@ -229,7 +231,7 @@ float:right;
 
 	&:hover, &:focus{
 		text-decoration: none;
-		background-color:darken($bci-orange, 30%);
+		background-color:darken($sidr-background, 30%);
 	}
 
 	// 
@@ -250,7 +252,7 @@ float:right;
 	// position:fixed;
 	// overflow-x:visible;
 	// overflow-y:scroll;
-	background-color:$bci-orange;
+	background-color:$sidr-background;
 	padding-bottom:1em;
 	
 	a{
@@ -319,7 +321,7 @@ float:right;
 		// border-radius:2em;
 
 		&:hover, &:focus{
-	  		background-color:darken($bci-orange, 10%);
+	  		background-color:darken($sidr-background, 10%);
 		}
 	}
 }

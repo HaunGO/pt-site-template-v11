@@ -57,36 +57,36 @@
 
 
 
- 
+  
 
 
 
 
 
 
-      <a id="sidr-menu-btn" href="#sidr-main"><i class="fa fa-bars"></i></a>
-      
-      <div id="site-topbar">
-        
+    <!-- <a id="sidr-menu-btn" href="#sidr-main"><i class="fa fa-bars"></i></a> -->
+
+<!-- 
+    <div id="site-topbar">
         <div class="logoholder"><img class="img-responsive" src="assets/img/logo-bci-white.png" alt=""></div>
+    </div>
+ -->
 
-      </div>
-
+<!-- 
+    <div id="sidr-main">
         
+        <a id="sidr-close-btn" href="#"><i class="fa fa-chevron-left"></i></a>
 
-      <div id="sidr-main">
-            <a id="sidr-close-btn" href="#"><i class="fa fa-chevron-left"></i></a>
-
-            <div class="logoholder"><img src="assets/img/logo-bci-white.png" alt=""></div>
+        <div class="logoholder"><img class="logo" src="assets/img/logo-bci-white.png" alt=""></div>
 
 
-          <div class="contact-links">
+        <div class="contact-links">
             <a href="#"><i class="fa fa-envelope"></i></a>
             <a href="#"><i class="fa fa-phone"></i>  (865) 577-5541 </a>
             <a href="#"><i class="fa fa-facebook"></i></a>
-          </div>
+        </div>
 
-          <nav>
+        <nav>
             <ul>
                 <li><a href="#">Sample link 1</a></li>
                 <li>
@@ -102,12 +102,12 @@
                 <li><a href="#">Sample link 5</a></li>
                 <li><a href="#">Sample link 6</a></li>
             </ul>
-          </nav>
+        </nav>
 
 
-      </div>
+    </div>
 
-
+ -->
 
     
 
@@ -116,6 +116,11 @@
 
 
 
+ 
+
+
+
+          
 
 
 
@@ -124,16 +129,38 @@
 
 
 
-    <div class="main container">
+<div class="main container">
         
 
 
 
 
+  
 
-<!-- DEMO OF STANDARD BOOTSTRAP TOP NAV BAR -->
-    <div id="sitenav" class="navbar navbar-default" >
-      <div class="container">
+
+
+
+
+
+
+
+
+    <div class="quick-contact">
+      <ul class="list-inline">
+        <li><a href="#"><i class="fa fa-phone"></i>phone</a></li>
+        <li><a href="#"><i class="fa fa-envelope"></i>email</a></li>
+        <li><a href="#"><i class="fa fa-map-marker"></i>location</a></li>
+      </ul>
+    </div>
+
+
+
+
+
+
+    <!-- STANDARD BOOTSTRAP TOP NAV BAR -->
+    <div id="sitenav" class="navbar navbar-default" data-pt-sticky >
+      <div class="pt-container">
 
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -143,14 +170,47 @@
             <a class="navbar-brand" href="#"><img src="http://placehold.it/100x50/?text=LOGO" alt="logo"></a>
         </div>
 
-        <div id="navbar" class="navbar-collapse collapse navbar-right" aria-expanded="false" style="height: 1px;">
-            <ul class="nav navbar-nav" > 
-                <li><a href="#company">Company</a></li>
-                <li><a href="#acquisitions">Acquisitions</a></li>
-                <li><a href="#development">Development</a></li>
-                <li><a href="#management">Management</a></li>
-                <li><a href="#brokerage">Brokerage</a></li>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+
+<!-- 
+            <ul class="nav navbar-nav" data-pt-spy > 
+                <li><a data-pt-spy-to="#section-intro"   href="#section-intro">intro</a></li>
+                <li><a data-pt-spy-to="#section-truck"   href="#section-truck">truck</a></li>
+                <li><a data-pt-spy-to="#section-brands"  href="#section-brands">brands</a></li>              
             </ul>
+ -->
+
+
+
+            <ul class="nav navbar-nav">
+
+                <li id="main_nav_item_0" class="main_nav_item "><a tabindex="-1" href="/home">Home</a></li>
+                <li id="main_nav_item_1" class="main_nav_item "><a tabindex="-1" href="/about">About</a></li>
+                <li id="main_nav_item_2" class="main_nav_item "><a tabindex="-1" href="/contact">Contact</a></li>
+                <li id="main_nav_item_3" class="main_nav_item "><a tabindex="-1" href="/single-page">Single Page</a></li>   
+                <li id="main_nav_item_4" class="main_nav_item dropdown"><a tabindex="-1" href="/sections" role="button" data-toggle="dropdown" class="dropdown-toggle">Sections <b class="caret"></b></a>
+                    
+                    <ul role="menu" class="dropdown-menu multi-level" aria-labelledby="dropdownMenu">
+                        <li class=""><a tabindex="-1" href="/ss-iliamna">SS-Iliamna</a></li>
+                        <li class=""><a tabindex="-1" href="/ss-splitsticky">SS-SplitSticky</a></li>
+                        <li class=""><a tabindex="-1" href="/ss-parallax">SS-Parallax</a></li>
+                        <li class=""><a tabindex="-1" href="/ss-3070">SS-3070</a></li>        
+                    </ul>
+
+                </li>
+                           
+                <li id="main_nav_item_5" class="main_nav_item "><a tabindex="-1" href="/new-page">New Page</a></li>
+                 
+            </ul>
+
+
+
+
+
+
+
+
         </div>
 
       </div>
@@ -163,8 +223,106 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <header id="my-homeplate" class="homeplate">
+        <div class="logoholder">
+            <img src="http://placehold.it/500x300/?text=LOGO" alt="logo">
+        </div>
+        <div class="headline">
+            <h1>Powerful Headline Text</h1>
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- DEMO OF data-pt-spy / data-pt-spy-to -->
-    <div id="testyspy">
+    <div class="testyspy">
         <ul class="nav" data-pt-spy > 
             <li><a data-pt-spy-to="#section-intro"   href="#section-intro">intro</a></li>
             <li><a data-pt-spy-to="#section-truck"   href="#section-truck">truck</a></li>
@@ -185,30 +343,9 @@
 
 
 
-
-
-
-
-      <header class="header">
-
-        <div class="headline">
-          <h1>Providing Headline Text</h1>
-        </div>
-
-      </header>
-
-
-
-
-
-
-
-
-
-
     <section id="section-intro">
 
-      <p>Beverage Control, Inc., established in 1961, is the premier distributor of premium spirits, fine wines, and high gravity beers throughout East Tennessee.  We are a family driven business fully committed to serving the needs of our customers, our suppliers, our employees, and our community. We are proud supporters of the three tier system that ensures the safe and responsible distribution of alcoholic beverages to our licensed customers.</p> 
+        <p>Beverage Control, Inc., established in 1961, is the premier distributor of premium spirits, fine wines, and high gravity beers throughout East Tennessee.  We are a family driven business fully committed to serving the needs of our customers, our suppliers, our employees, and our community. We are proud supporters of the three tier system that ensures the safe and responsible distribution of alcoholic beverages to our licensed customers.</p> 
 
     </section>
 
@@ -240,6 +377,10 @@
 
 
 
+
+
+
+
 <section id="" class="ab-5050" >
     <div class="ab-a bg-barrels" >
 
@@ -259,17 +400,21 @@
 
 
 
+
+
+
+
 <section id="section-brands" class="">
-  <h3 class="text-center">Sample of brands we carry</h3>
-        <ul id="slick-brands" > 
-          <li><img src="assets/img/brands/1.png" alt="" ></li>
-          <li><img src="assets/img/brands/2.png" alt="" ></li>
-          <li><img src="assets/img/brands/3.png" alt="" ></li>
-          <li><img src="assets/img/brands/4.png" alt="" ></li>
-          <li><img src="assets/img/brands/5.png" alt="" ></li>
-          <li><img src="assets/img/brands/6.png" alt="" ></li>
-          <li><img src="assets/img/brands/7.png" alt="" ></li>
-        </ul>
+    <h3 class="text-center">Sample of brands we carry</h3>
+    <ul class="pt-slick-1" > 
+        <li><img src="assets/img/brands/1.png" alt="" ></li>
+        <li><img src="assets/img/brands/2.png" alt="" ></li>
+        <li><img src="assets/img/brands/3.png" alt="" ></li>
+        <li><img src="assets/img/brands/4.png" alt="" ></li>
+        <li><img src="assets/img/brands/5.png" alt="" ></li>
+        <li><img src="assets/img/brands/6.png" alt="" ></li>
+        <li><img src="assets/img/brands/7.png" alt="" ></li>
+    </ul>
 </section>
 
 
@@ -310,22 +455,13 @@
 
 
 
-
-
-
-
-
-
-
-    <footer class="footer">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer class="footer pt-pos-5 pt-padded-responsive">
+      <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
       <h1>Footer</h1>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
     </footer>
 
 
-<!-- .page-wrapper -->
-<!-- </div> -->
 
 
 
@@ -369,7 +505,7 @@
 */        
 
 
-        $('#slick-brands').slick({
+        $('.pt-slick-1').slick({
           dots: false,
           arrows: true,
           infinite: true,

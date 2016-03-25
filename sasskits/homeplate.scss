@@ -8,27 +8,6 @@
 
 
 /* 
-    <header class="header-home">
-
-      <div class="logo-holder">
-        <img src="assets/img/logo-brookings-white-lg.png" alt="Brookings Anglers logo">
-      </div>
-      
-      <div class="headline">
-        <h2>Header for Tease</h2>
-        <h4>Sub Headline for Zing</h4>
-      </div>
-
-    </header>
-
-
-    <header class="header-interior">
-      
-      <div class="headline">
-        <h1>Interior Headline</h1>
-      </div>
-
-    </header>
 
 
  */
@@ -36,27 +15,56 @@
 
 
 
-.header{
+.homeplate{
 
-  position:relative;
+    position:relative;
 
-  padding:5em 0 3em 0;
+    padding:5em 0 3em 0;
 
-  min-height:400px;
+    min-height:600px;
 
-  @include ptBreakpoint($sm){
-    padding:10em 0 15em 0;
-  
-    .cssvhunit &{
-      min-height:80vh;
-      padding:2em;
-    }  
-  
-    .no-touchevents &{
-      // background-attachment:fixed;
+    // @include ptPos(5);
+
+
+    @include ptBreakpoint($sm){
+        padding:10em 0 15em 0;
+
+        .cssvhunit &{
+            min-height:90vh;
+            padding:5em 1em;
+        }  
+
+        .no-touchevents &{
+            background-attachment:fixed;
+        }
+
     }
 
-  }
+
+    *{
+        z-index:5;
+    }
+
+
+    // &:before{
+    //     content:' ';
+    //     position:absolute;
+    //     top:0; left:0; bottom:0; right:0;
+    //     width:100%; height:100%;
+    //     background-color:black;
+    //     opacity:0.7;
+    //     z-index:1;
+    // }
+
+
+    &:before {
+        content:'';
+        position:absolute; top:0; left:0; bottom:0; right:0;
+        width:100%; height:100%;
+        display:block;
+        z-index:1;
+        background: url('http://www.domain40.pagetree.com/app/webroot/userfiles/273/Image/tpl/slide-texture.png') top left;
+    }
 
 }
  
@@ -64,42 +72,62 @@
 
 
 
-.headline{
-  position:absolute; bottom:5em;
-  left:50%;
-  transform:translateX(-50%);
 
 
-  // background-color:darken($bci-orange, 10%);
-  background-color:darken($bci-grey, 10%);
-
-  
-
-  color:#fff;
-  text-transform:capitalize;    
+.homeplate .logoholder{
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:600px;
+  height:auto;
+  margin:5em auto;
   text-align:center;
-  
-  h1{
-    font-size:2em;
-    margin:0.5em; padding:0;
-  }  
-  @include ptBreakpoint($sm){
-    h1{
-      font-size:2.5em;
-    }  
-  } 
+  // padding:1em;
 
-  width:90%;
-  max-width:700px;
-  border-radius:5px;
+  img{
+    // width:100%;
+    max-width:90%;
+    height:auto;
+  }
 
-  padding:2em;
-  margin:auto;
+}
 
 
 
 
-  &:before{
+
+.homeplate .headline{
+    position:relative;
+
+    color:#fff;
+    background-color:rgba($pt-color-primary, 0.7);
+
+    width:90%;
+    max-width:700px;
+    // border-radius:5px;
+
+    padding:2em;
+    margin:auto;
+
+
+    text-transform:capitalize;    
+    text-align:center;
+
+    // h1{
+    //     font-size:2em;
+    //     margin:0.5em; padding:0;
+    // }  
+
+    // @include ptBreakpoint($sm){
+    //     h1{
+    //       font-size:2.5em;
+    //     }  
+    // } 
+
+
+/* 
+  &
+  :before{
     content:' ';
     position:absolute; top:1em; left:1em; right:1em;
     margin:1em;
@@ -112,8 +140,11 @@
     margin:1em;
     // width:100%;
     border-bottom:2px solid #fff;
-  }
+  } 
+*/
+  
 }
+
 
 
 

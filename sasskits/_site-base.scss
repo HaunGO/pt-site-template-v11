@@ -1,7 +1,7 @@
 
 
 
-
+ 
 
 
 html {
@@ -30,14 +30,16 @@ html {
   z-index:9999999999999;
 }
 
+
 .viewport{
   position:relative;
-  background-color:#e8e8e8;
+  // background-color:#e8e8e8;
 }
    
 
 .pt-container{
   width:100%;
+  // max-width:1600px;
   max-width:initial;
   position: relative;
   margin-left:auto;
@@ -117,38 +119,6 @@ html {
 }
 
 
-.bg-knoxville{
-  background-image:url($img-url+'knoxville-md.jpg');
-  background-position:50% 50%;
-  background-size:cover;
-
-  @include ptBreakpoint($sm){
-    background-image:url($img-url+'knoxville-md.jpg');
-  }
-
-  @include ptBreakpoint($md){
-    background-position:50% 20%;
-    background-image:url($img-url+'knoxville-lg.jpg');
-  }
-}
-
-
-
-.bg-building{
-  background-image:url($img-url+'building-render-sm.jpg');
-  background-position:50% 50%;
-  background-size:cover;
-
-  @include ptBreakpoint($sm){
-    background-image:url($img-url+'building-render-md.jpg');
-  }
-
-  @include ptBreakpoint($md){
-    background-image:url($img-url+'building-render-lg.jpg');
-  }
-}
-
-
 .bg-barrels{
   background-image:url($img-url+'barrels-sm.jpg');
   background-position:50% 50%;
@@ -165,17 +135,59 @@ html {
 
 
 
+.bg-r1{
+    background-image:url('http://lorempixel.com/400/300/abstract/1/');
+    background-position:center;
+    background-size:cover;
+
+    @include ptBreakpoint($sm){
+        background-image:url('http://lorempixel.com/800/600/abstract/1/');
+    }
+
+    @include ptBreakpoint($md){
+        background-image:url('http://lorempixel.com/1200/1000/abstract/1/');
+    }
+
+    @include ptBreakpoint($lg){
+        background-image:url('http://lorempixel.com/1800/1400/abstract/1/');
+    }
+}
 
 
-.bg-suds{
+.bg-r2{
+    background-image:url('http://lorempixel.com/400/300/nature/2/');
+    background-position:center;
+    background-size:cover;
 
-  background-image:url($img-url+'bg-suds-md.png');
-  background-position:center;
-  background-size:contain;
+    @include ptBreakpoint($sm){
+        background-image:url('http://lorempixel.com/800/600/nature/2/');
+    }
 
-  @include ptBreakpoint($md){
-    background-image:url($img-url+'bg-suds-lg.png');
-  }
+    @include ptBreakpoint($md){
+        background-image:url('http://lorempixel.com/1200/1000/nature/2/');
+    }
+
+    @include ptBreakpoint($lg){
+        background-image:url('http://lorempixel.com/1800/1400/nature/2/');
+    }
+}
+
+.bg-r3{
+    background-image:url('http://lorempixel.com/400/300/cats/3/');
+    background-position:center;
+    background-size:cover;
+
+    @include ptBreakpoint($sm){
+        background-image:url('http://lorempixel.com/800/600/cats/3/');
+    }
+
+    @include ptBreakpoint($md){
+        background-image:url('http://lorempixel.com/1200/1000/cats/3/');
+    }
+
+    @include ptBreakpoint($lg){
+        background-image:url('http://lorempixel.com/1800/1400/cats/3/');
+    }
 }
 
 
@@ -188,13 +200,38 @@ html {
 
 
 
-// body{
-//   border:10px solid purple;
-  
-//   .cssvhunit &{
-//     border:10px solid pink;
-//   }
-// }
+
+.before-halftone{
+    
+    position:relative;
+    
+    &:before {
+        content:'';
+        position:absolute; top:0; left:0; bottom:0; right:0;
+        width:100%; height:100%;
+        display:block;
+        z-index:100;
+        background: url('http://www.domain40.pagetree.com/app/webroot/userfiles/273/Image/tpl/slide-texture.png') top left;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -242,18 +279,6 @@ html {
     margin:auto;
   }
 
-  background-image:url($img-url+'building-render-sm.jpg');
-  background-position:50% 50%;
-  background-size:cover;
-  // background-size:contain;
-
-  @include ptBreakpoint($sm){
-    background-image:url($img-url+'building-render-md.jpg');
-  }
-
-  @include ptBreakpoint($md){
-    background-image:url($img-url+'building-render-lg.jpg');
-  }
 
 }
 
@@ -277,9 +302,17 @@ html {
 
 
 
+
+
+
+
+
+
+
+
+
 #section-truck{
   
-
   background-image:url($img-url+'truck-lg.jpg');
   background-position:100% 50%;
   background-size:cover;
@@ -319,13 +352,43 @@ html {
 
 
 
+
+
+
+
+
+
+
+
+
 #section-brands{
   @include ptPadding(1em 2em);
   background-color:white;
 }
 
 
-#slick-brands{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pt-slick-1{
   
   margin:3em 0 0 0;
   padding:0;
@@ -402,23 +465,197 @@ html {
 
 
 
-#testyspy{
-  position:fixed;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
-  // border:1px solid red;
-  z-index: 99999;
-  background-color:white;
-  .active{
-      background-color:gold;
-  }
+.testyspy{
+    position:fixed;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    // border:1px solid red;
+    z-index: 99999;
+    background-color:white;
+    
+
+
+    li{
+        &.active{
+            a{
+                color:white;
+                background-color:$pt-color-primary;
+                &:hover, &:focus, &:active, &:focus:hover{
+                    // color:$pt-color-primary;
+                    background-color:lighten($pt-color-primary, 5%);
+                }   
+            }
+        }
+        a{
+            color:$pt-color-primary;
+            &:hover, &:focus, &:active, &:focus:hover{
+                color:white;
+                background-color:$pt-color-primary;
+            }   
+        }
+    }
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.guides-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.guide{
+    position:relative;
+    // border:1px solid indianred;
+    flex:0 0 auto;
+    
+    width:300px;
+    margin:0.5em;
+    // padding:1em;
+    
+    img{
+        width:100%;
+        height:auto;
+    }
+    
+    &:hover{
+        .guide-info{
+            opacity:1;
+        }       
+    }
 }
 
 
 
 
 
+
+
+.guide-info{
+    transition:0.2s;
+
+    opacity:0;
+    
+    position:absolute;top:0; left:0; bottom:0; right:0;
+    padding:1em;
+    background-color:indianred;
+    color:white;
+
+    overflow-y:scroll;
+    
+    p{
+      color:white;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+/* 
+<section class="pt-zone-60">
+  <div class="flexslider css-flexslider">
+    <ul class="slides">
+      <li data-pt-imgswap>
+        <img class="" src="http://placehold.it/500x300" >
+      </li>
+      <li data-pt-imgswap>
+        <img class="" src="http://placehold.it/500x301" >
+      </li>
+      <li data-pt-imgswap>
+        <img class="" src="http://placehold.it/500x302" >
+      </li>
+      <li data-pt-imgswap>
+        <img class="" src="http://placehold.it/500x303" >
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+ $(window).load(function() {
+  $('.css-flexslider').flexslider({
+    animation: "fade"
+  });
+});   
+</script>
+ 
+
+ */
+
+
+
+.css-flexslider{
+  // border:1px solid red; 
+
+  display:block;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;left:0;bottom:0;left:0;
+
+  ul.slides{
+    // border:1px solid gold;
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;left:0;bottom:0;left:0;
+  
+    li{
+      // border:1px solid green;
+
+      display:block;
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;left:0;bottom:0;left:0;
+    }
+  }
+}
 
 
 

@@ -6,39 +6,29 @@
 
 
 
-$ba-red:#aa3700;
-
-$ba-drabgreen:#474b19;
-
-$ba-limegreen:#99aa3a;
-
-$ba-darkgreen:#293e2f;
-
-$ba-tan:#d5d3be;
-
-$ba-text-dark:#5e5d5d;
-
-$ba-offwhite:#E8E8E8;
+// $ba-red : #aa3700;
+$ba-tan : #d5d3be;
+// $ba-drabgreen : #474b19;
+// $ba-limegreen : #99aa3a;
+$ba-darkgreen : #293e2f;
+// $ba-text-dark : #5e5d5d;
+// $ba-offwhite  : #E8E8E8;
 
 
 
 
-$bci-orange:#f47c29;
-
-$bci-blue:#4e629f;
-
-$bci-green:#a5b66c;
-
-
-$bci-grey:#58595b;
+$bci-orange	: #f47c29;
+$bci-blue	: #4e629f;
+$bci-green	: #a5b66c;
+$bci-grey	: #58595b;
 
 
 
 
 
-$pt-color-primary	:	lightgreen	; 
-$pt-color-secondary	:	lightblue	; 
-$pt-color-highlight	: 	indianred 	; 
+$pt-color-primary	:	teal	; 
+$pt-color-secondary	:	salmon	; 
+$pt-color-highlight	: 	orangered 	; 
 
 
 
@@ -68,6 +58,14 @@ $pt-text-color : $pt-text-color-mid ;
 $pt-bg-light 	:	$pt-color-gray-light 	; 			
 $pt-bg-mid 		:	$pt-color-gray-mid 		; 	
 $pt-bg-dark 	:	$pt-color-gray-dark		; 	
+
+
+
+
+
+
+ $pt-sidr-background : $pt-color-primary;
+
 
 
 
